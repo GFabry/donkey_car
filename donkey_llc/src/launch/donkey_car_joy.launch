@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="donkey_llc" name="low_level_control.py" type="low_level_control.py" output="screen"> </node>
+  <node pkg="i2cpwm_board" name="i2cpwm_board" type="i2cpwm_board" output="screen"> </node>
+  <node pkg="joy" name="joy_node" type="joy_node" output="screen"> </node>
+  <node pkg="teleop_twist_joy" name="teleop_node" type="teleop_node" output="screen">
+    <rosparam command="load" file="/home/ubuntu/catkin_ws/src/donkey_llc/config/f710.config.yaml" />
+ </node>
+</launch>
